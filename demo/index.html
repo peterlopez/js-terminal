@@ -1,8 +1,25 @@
 <html>
   <head>
     <title>JS Terminal Demo</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Load jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- Load JS Terminal plugin -->
+    <script src="../js-terminal.js"></script>
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <div id="iMac">
+      <div class="terminal" style="cursor: pointer;"><p class="above-output">
+        <span class="begin-command">$&nbsp;</span>print greeting();
+        <br>Hello, World!
+        <br>Welcome to <span class="highlight">JS Terminal</span>
+        <br><br>This is a fully customizable, interactive terminal
+        <br><span class="highlight">click me!</span></p>
+        
+        <p class="input" onfocus="this.value = this.value;" contenteditable="true"></p>
+      </div>
+    </div>
   </body>
 </html>
