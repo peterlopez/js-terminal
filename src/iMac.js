@@ -74,7 +74,7 @@ var iMac =
    */
    initDeviceSpecificSettings: function()
    {
-      if(! Mobile.isMobile()) {
+      if(true) { //! Mobile.isMobile()
          iMac.clientScreen = "desktop";
          $(iMac.terminal).css('cursor', 'pointer');
          
@@ -135,7 +135,7 @@ var iMac =
             // Get input after "play "
             var song = input.split("play ")[1].toLowerCase();
             
-            Command.playSong(song);         
+            Command.playSong(song);
             break;
       
          case /project\s+[0-9]+/.test(input):
