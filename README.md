@@ -5,7 +5,8 @@ Easily build an interactive terminal into your website with this jQuery plugin. 
 ## Requirements & Installation
 
 1. Make sure [jQuery](http://jquery.com/download/) is loaded on the page
-2. Load `js-terminal.min.js` (after jQuery) like so:
+2. Download `js-terminal.min.js` and move it somewhere accessible to your markup
+3. Load `js-terminal.min.js` (after jQuery) like so:
 
 ```html
 <!-- Load jQuery -->
