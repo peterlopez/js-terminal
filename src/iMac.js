@@ -29,13 +29,12 @@ var iMac =
                      "<span class='highlight'>play song</span> - I'll play a song on the piano"+"<br />"+
                      "<span class='highlight'>project [#]</span> - Go to a project where [#] is the project ID"+"<br />"+
                      "<span class='highlight'>shutdown</span> - sign off this site"+"<br />",
-   beginCommandStr:  "<span class='begin-command'>>_ </span>",
-   greeting:         this.beginCommandStr+"print greeting();"+"<br />"+
-                     "Hello world!"+"<br />"+
-                     "My name is <span class='highlight'>Peter Lopez</span>"+"<br /><br />"+
-                     "I'm a programmer and web"+"<br />"+
-                     "developer"+"<br /><br />"+
-                     this.deviceDependentText,
+   beginCommandStr:  "<span class='begin-command'>$&nbsp;</span>",
+   greeting:         this.beginCommandStr+" print greeting();"+"<br />"+
+                     "Hello, World!"+"<br />"+
+                     "Welcome to <span class='highlight'>JS Terminal</span>"+"<br><br>"+
+                     "This is a fully customizable, interactive terminal"+"<br>"+
+                     "<span class='highlight'>click me!</span>",
    /**
    * @property DOM element where audio is loaded
    */
@@ -67,15 +66,6 @@ var iMac =
       iMac.initDeviceSpecificSettings();
       iMac.registerEvents();
       
-      // Set start text
-      iMac.aboveOutput = 
-         iMac.beginCommandStr+"print greeting();"+"<br />"+
-         "Hello world!"+"<br />"+
-         "My name is <span class='highlight'>Peter Lopez</span>"+"<br /><br />"+
-         "I'm a programmer and web"+"<br />"+
-         "developer"+"<br /><br />"+
-         iMac.deviceDependentText;
-      iMac.update();
       iMac.initalized = true;
    },
    
