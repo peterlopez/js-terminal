@@ -15,6 +15,11 @@ Easily build an interactive terminal into your website with this jQuery plugin. 
 <!-- Load JS Terminal plugin -->
 <script src='path/to/js-terminal.min.js'></script>
 ```
+To view a demo:
+
+1. [Download](https://github.com/peterlopez/js-terminal/archive/master.zip) .zip of this repo
+2. Unzip it
+3. Open `demo/index.html` in any browser
 
 ## Usage
 
