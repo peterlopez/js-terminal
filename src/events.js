@@ -50,17 +50,6 @@ var Events =
    {
       var events = {};
       events[iMac.input] = function(e) {
-         
-         // Add tooltips for certain commands
-         if( $(iMac.input).text() === "play" ) {
-            // TODO: position tooltip below .input
-            $(iMac.input).tooltip({
-               items: "p",
-               position: { my: "center top+3", at: "center center" },
-               content: "Type 'song' or the name of a song like:<br>'play song' or 'play happy-birthday'"
-            });
-         }
-         
          // Check for action keys like "enter" and "up arrow"
          switch(e.keyCode)
          {
