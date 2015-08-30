@@ -123,17 +123,6 @@ var Events =
    {
       var events = {};
       events[iMac.input] = function(e) {
-         
-         // Add tooltips for certain commands
-         if( $(iMac.input).text() === "play" ) {
-            // TODO: position tooltip below .input
-            $(iMac.input).tooltip({
-               items: "p",
-               position: { my: "center top+3", at: "center center" },
-               content: "Type 'song' or the name of a song like:<br>'play song' or 'play happy-birthday'"
-            });
-         }
-         
          // Check for action keys like "enter" and "up arrow"
          switch(e.keyCode)
          {
@@ -216,13 +205,12 @@ var iMac =
                      "<span class='highlight'>play song</span> - I'll play a song on the piano"+"<br />"+
                      "<span class='highlight'>project [#]</span> - Go to a project where [#] is the project ID"+"<br />"+
                      "<span class='highlight'>shutdown</span> - sign off this site"+"<br />",
-   beginCommandStr:  "<span class='begin-command'>>_ </span>",
-   greeting:         this.beginCommandStr+"print greeting();"+"<br />"+
-                     "Hello world!"+"<br />"+
-                     "My name is <span class='highlight'>Peter Lopez</span>"+"<br /><br />"+
-                     "I'm a programmer and web"+"<br />"+
-                     "developer"+"<br /><br />"+
-                     this.deviceDependentText,
+   beginCommandStr:  "<span class='begin-command'>$&nbsp;</span>",
+   greeting:         this.beginCommandStr+" print greeting();"+"<br />"+
+                     "Hello, World!"+"<br />"+
+                     "Welcome to <span class='highlight'>JS Terminal</span>"+"<br><br>"+
+                     "This is a fully customizable, interactive terminal"+"<br>"+
+                     "<span class='highlight'>click me!</span>",
    /**
    * @property DOM element where audio is loaded
    */
@@ -254,15 +242,6 @@ var iMac =
       iMac.initDeviceSpecificSettings();
       iMac.registerEvents();
       
-      // Set start text
-      iMac.aboveOutput = 
-         iMac.beginCommandStr+"print greeting();"+"<br />"+
-         "Hello world!"+"<br />"+
-         "My name is <span class='highlight'>Peter Lopez</span>"+"<br /><br />"+
-         "I'm a programmer and web"+"<br />"+
-         "developer"+"<br /><br />"+
-         iMac.deviceDependentText;
-      iMac.update();
       iMac.initalized = true;
    },
    
@@ -271,7 +250,7 @@ var iMac =
    */
    initDeviceSpecificSettings: function()
    {
-      if(! Mobile.isMobile()) {
+      if(true) { //! Mobile.isMobile()
          iMac.clientScreen = "desktop";
          $(iMac.terminal).css('cursor', 'pointer');
          
@@ -332,7 +311,7 @@ var iMac =
             // Get input after "play "
             var song = input.split("play ")[1].toLowerCase();
             
-            Command.playSong(song);         
+            Command.playSong(song);
             break;
       
          case /project\s+[0-9]+/.test(input):
