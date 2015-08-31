@@ -32,8 +32,9 @@ Check back soon for documentation on how to integrate this into your project.
 
  If you're interested in workin on my source code while I'm finishing an API for it:
  
- 1. `$ git clone {URL}`
- 2. `$ git checkout -b develop origin/develop`
+ 1. `$ git clone https://github.com/peterlopez/js-terminal`
+ 2. `$ cd js-terminal`
+ 3. `$ git checkout -b develop origin/develop`
 
 I admire your spirit and willingness to contribute and help this project become more functional, robust, and enjoyable! This is some of the most fun I've ever had with code, be it Javascript or any other programming language.
 
