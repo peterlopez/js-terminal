@@ -45,4 +45,4 @@ Here are some points before getting started:
 * Also, keep in mind, the commands I currently have integrated into the source code are pretty specifically fun to me. Not ashamed to say :)
 * Feel free to dig around and change what you want.
 
-**If you have or want to improve something please send me a message and/or pull request!**
+**If you have or want to improve something please send me a message and/or pull request!** *I will make your name ~~famous~~ appear on this document if you do so.*
