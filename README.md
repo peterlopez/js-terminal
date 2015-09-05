@@ -5,8 +5,9 @@ Easily build an interactive terminal into your website with this jQuery plugin. 
 ## Requirements & Installation
 
 1. Make sure [jQuery](http://jquery.com/download/) is loaded on the page
-2. Download `js-terminal.min.js` and move it somewhere accessible to your markup
-3. Load `js-terminal.min.js` (after jQuery) like so:
+2. [Download](https://github.com/peterlopez/js-terminal/archive/master.zip) and unzip files.
+3. Move `js-terminal.min.js` somewhere accessible to your markup
+4. Load `js-terminal.min.js` (after jQuery) like so:
 
 ```html
 <!-- Load jQuery -->
@@ -15,6 +16,11 @@ Easily build an interactive terminal into your website with this jQuery plugin. 
 <!-- Load JS Terminal plugin -->
 <script src='path/to/js-terminal.min.js'></script>
 ```
+To view a demo:
+
+1. [Download](https://github.com/peterlopez/js-terminal/archive/master.zip) .zip of this repo
+2. Unzip it
+3. Open `demo/index.html` in any browser
 
 ## Usage
 
@@ -24,10 +30,11 @@ Check back soon for documentation on how to integrate this into your project.
 
 ## Contributing
 
- If you're interested in checkout out my source code while I'm finishing an API for it:
+ If you're interested in workin on my source code while I'm finishing an API for it:
  
- 1. `$ git clone {URL}`
- 2. `$ git checkout -b develop origin/develop`
+ 1. `$ git clone https://github.com/peterlopez/js-terminal`
+ 2. `$ cd js-terminal`
+ 3. `$ git checkout -b develop origin/develop`
 
 I admire your spirit and willingness to contribute and help this project become more functional, robust, and enjoyable! This is some of the most fun I've ever had with code, be it Javascript or any other programming language.
 
@@ -38,4 +45,4 @@ Here are some points before getting started:
 * Also, keep in mind, the commands I currently have integrated into the source code are pretty specifically fun to me. Not ashamed to say :)
 * Feel free to dig around and change what you want.
 
-**If you have or want to improve something please send me a message and/or pull request!**
+**If you have or want to improve something please send me a message and/or pull request!** *I will make your name ~~famous~~ appear on this document if you do so.*
