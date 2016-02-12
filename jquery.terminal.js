@@ -2,6 +2,20 @@
 (function ($) {
 /* jshint ignore:end */
 
+/**
+ * Initializes a new terminal object with options
+ * @constructor
+ * @param $display (jQuery object) element which displays result of a command
+ * @param $input (jQuery object) element which recieves input via keyboard
+ */
+var Terminal = function($display, $input) {
+   this.$display = $display;
+   this.$input = $input;
+};
+
+Terminal.prototype = Object.create(Terminal.prototype);
+Terminal.prototype.constructor = Terminal;
+
 /*
 *  commands.js
 *  Functions for on iMac
@@ -422,6 +436,41 @@ var iMac =
 $(document).ready(function() {
    iMac.init();
 });
+/*
+ * Register jQuery function which initalizes terminal.
+ * finds DOM elements registers event handlers to them.
+ * TODO: add scope (as parameter) for selectors outside of container
+ */
+$.fn.terminal = function() {
+  // Forget this shit if called on a non-existent DOM element
+  if(!this.length) {
+    console.log("js-terminal could not be initalized. Call .terminal() on a valid jQuery object.");
+    return false;
+  }
+  // Setup CSS selectors for required DOM elements
+  var $container = this;
+  var terminalElements = {
+    "input":        ".terminal .input",
+    "display":      ".terminal .display",
+    "audio":        ".terminal #audio"
+  };
+  
+  // Check that required DOM elements exist
+  var elementsExist = false;
+  checkElementsExist:
+  {
+    // Exit this block if any elements do not exist
+    for (var key in terminalElements) {
+      // Lookup each element within container
+      if( !$(terminalElements[key], $container).length ) {
+        break checkElementsExist;
+      }
+    }
+    elementsExist = true;
+  }
+  
+  return true;
+};
 
 /* jshint ignore:start */
 
