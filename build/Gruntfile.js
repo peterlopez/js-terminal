@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
       // Check source code and compiled source code for errors
       jshint: {
-        files: ['../src/*.js', 'jquery.terminal.js'],
+        files: ['../src/*.js', '../jquery.terminal.js'],
         options: {
            globals: {
               jQuery: true,
@@ -26,15 +26,15 @@ module.exports = function(grunt) {
                '!../src/*.utils.js',
                'end.utils.js'
             ],
-            dest: 'jquery.terminal.js'
+            dest: '../jquery.terminal.js'
          },
          addWrapper: {
             src: [
                '../src/begin.utils.js',
-               'jquery.terminal.js',
+               '../jquery.terminal.js',
                '../src/end.utils.js'
             ],
-            dest: 'jquery.terminal.js'
+            dest: '../jquery.terminal.js'
          }
       },
 
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         },
         build: {
            files: {
-              'jquery.terminal.min.js': 'jquery.terminal.js',
+              '../jquery.terminal.min.js': '../jquery.terminal.js',
            }
         }
       },
