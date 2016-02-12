@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
       // Check source code and compiled source code for errors
       jshint: {
-        files: ['Gruntfile.js', 'src/*.js', 'js-terminal.js'],
+        files: ['../src/*.js', 'jquery.terminal.js'],
         options: {
            globals: {
               jQuery: true,
@@ -22,37 +22,37 @@ module.exports = function(grunt) {
       concat: {
          compileSource: {
             src: [
-               'src/*.js',
-               '!src/*.utils.js',
+               '../src/*.js',
+               '!../src/*.utils.js',
                'end.utils.js'
             ],
-            dest: 'js-terminal.js'
+            dest: 'jquery.terminal.js'
          },
-         addToEnds: {
+         addWrapper: {
             src: [
-               'src/begin.utils.js',
-               'js-terminal.js',
-               'src/end.utils.js'
+               '../src/begin.utils.js',
+               'jquery.terminal.js',
+               '../src/end.utils.js'
             ],
-            dest: 'js-terminal.js'
+            dest: 'jquery.terminal.js'
          }
       },
 
       // Minify/compress source code
       uglify: {
         options: {
-           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+           banner: '/*! <%= pkg.name %> */\n'
         },
         build: {
            files: {
-              'js-terminal.min.js': 'js-terminal.js',
+              'jquery.terminal.min.js': 'jquery.terminal.js',
            }
         }
       },
-      
+
       watch: {
-        files: ['src/*.js', 'begin.js', 'end.js'],
-         tasks: ['jshint', 'concat:compileSource', 'concat:addToEnds', 'uglify']
+        files: ['../src/*.js'],
+         tasks: ['jshint', 'concat:compileSource', 'concat:addWrapper', 'uglify']
       },
    });
 
@@ -61,5 +61,5 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks('grunt-contrib-concat');
    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-   grunt.registerTask('default', ['jshint', 'concat:compileSource', 'concat:addToEnds', 'uglify']);
+   grunt.registerTask('default', ['jshint', 'concat:compileSource', 'concat:addWrapper', 'uglify']);
 };
